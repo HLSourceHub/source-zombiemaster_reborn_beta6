@@ -1,0 +1,69 @@
+WeaponData
+{
+	"printname"				"MAC 10"
+	
+	"viewmodel"				"models/weapons/c_mac10_new.mdl"
+	"worldmodel"			"models/weapons/smg_zm_3rd.mdl"
+	
+	"player_anims"			"mac10"
+	
+	
+	"PrimaryAttack"
+	{
+		"firerate"			"0.06"
+		"damage"			"17"
+		"range"				"1400"
+		
+		// 4 degrees
+		"spread"			"4 4 0"
+		
+		// Viewpunch stuff specific to Mac-10
+		"easy_dampen"		"0.5"
+		"max_vertical_kick"	"2.0"
+		"slide_limit"		"1.0"
+	}
+	
+	
+	"crosshair"				"Mac10"
+	
+	"primary_ammo"			"SMG1"
+	
+	"clip_size"				"30"
+	"default_clip"			"0"
+	
+	"reloadtime"			"1.33"
+	
+	
+	"bucket"				"3"
+	"bucket_position"		"0"
+	"importance"			"4"
+	
+	
+	"reloadonladder"		"0"
+	
+	
+	SoundData
+	{
+		"empty"				"Weapon_SMG_ZM.Empty"
+		"single_shot"		"Weapon_SMG_ZM.Single"
+	}
+
+	TextureData
+	{
+		"weapon"
+		{
+				"font"		"WeaponIcons"
+				"character"	"a"
+		}
+		"weapon_s"
+		{	
+				"font"		"WeaponIconsSelected"
+				"character"	"a"
+		}
+		"ammo"
+		{
+				"font"		"WeaponIcons"
+				"character"	"r"
+		}
+	}
+}

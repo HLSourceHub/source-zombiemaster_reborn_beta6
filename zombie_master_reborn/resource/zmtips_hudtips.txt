@@ -1,0 +1,334 @@
+"Tips"
+{
+	"zmintro"
+	{
+		"msg"			"#ZMHelpZMIntro"
+		"icon"			"zmr_effects/tt_icon_light"
+		"time"			"8"
+		"limit"			"2"
+		"limitpergame"	"1"
+		"priority"		"5"
+		"team"			"3"
+		"pulse"			"1"
+		"sound"			"1"
+	}
+	"zmmoving"
+	{
+		"msg"			"#ZMHelpZMMoving"
+		"icon"			"zmr_effects/tt_icon_light"
+		"time"			"5"
+		"limit"			"3"
+		"limitpergame"	"2"
+		"priority"		"4"
+		"team"			"3"
+		"canbequeued"	"1"
+		"pulse"			"1"
+		"sound"			"1"
+		
+		"param1"		"key@zm_observermode"
+	}
+	"zmvision"
+	{
+		"msg"			"#ZMHelpZMVision"
+		"icon"			"zmr_effects/tt_icon_light"
+		"time"			"9"
+		"limit"			"2"
+		"limitpergame"	"1"
+		"priority"		"3"
+		"team"			"3"
+		"random"		"1"
+		"pulse"			"1"
+		"sound"			"0"
+		
+		"param1"		"key@zm_vision"
+	}
+	"tutorial1"
+	{
+		"msg"			"#ZMTutorial1"
+		"icon"			"zmr_effects/tt_icon_light"
+		"time"			"9"
+		"priority"		"1003"
+		"pulse"			"1"
+		"sound"			"1"
+	}
+	"tutorial1b"
+	{
+		"msg"			"#ZMTutorial1b"
+		"icon"			"zmr_effects/tt_icon_light"
+		"time"			"15"
+		"priority"		"1002"
+		"pulse"			"0"
+		"sound"			"1"
+	}
+	"tutorial2"
+	{
+		"msg"			"#ZMTutorial2"
+		"icon"			"zmr_effects/tt_icon_light"
+		"time"			"13"
+		"priority"		"1001"
+		"canbequeued"	"1"
+		"pulse"			"0"
+		"sound"			"1"
+		
+		"param1"		"key@+forward"
+		"param2"		"key@+moveleft"
+		"param3"		"key@+back"
+		"param4"		"key@+moveright"
+	}
+	"tutorial3"
+	{
+		"msg"			"#ZMTutorial3"
+		"icon"			"zmr_effects/tt_icon_light"
+		"time"			"9"
+		"priority"		"1000"
+		"canbequeued"	"1"
+		"pulse"			"0"
+		"sound"			"1"
+	}
+	"tutorial3b"
+	{
+		"msg"			"#ZMTutorial3b"
+		"icon"			"zmr_effects/tt_icon_light"
+		"time"			"8"
+		"priority"		"999"
+		"canbequeued"	"1"
+		"pulse"			"0"
+		"sound"			"1"
+	}
+	"tutorial4"
+	{
+		"msg"			"#ZMTutorial4"
+		"icon"			"zmr_effects/tt_icon_light"
+		"time"			"9999"
+		"priority"		"998"
+		"canbequeued"	"1"
+		"pulse"			"1"
+		"sound"			"1"
+	}
+	"tutorial4b"
+	{
+		"msg"			"#ZMTutorial4b"
+		"icon"			"zmr_effects/tt_icon_light"
+		"time"			"10"
+		"priority"		"1001"
+		"pulse"			"0"
+		"sound"			"1"
+	}
+	"tutorial5"
+	{
+		"msg"			"#ZMTutorial5"
+		"icon"			"zmr_effects/tt_icon_light"
+		"time"			"9999"
+		"priority"		"1000"
+		"canbequeued"	"1"
+		"pulse"			"1"
+		"sound"			"1"
+	}
+	"tutorial5b"
+	{
+		"msg"			"#ZMTutorial5b"
+		"icon"			"zmr_effects/tt_icon_light"
+		"time"			"10"
+		"priority"		"1001"
+		"pulse"			"0"
+		"sound"			"1"
+	}
+	"tutorial6"
+	{
+		"msg"			"#ZMTutorial6"
+		"icon"			"zmr_effects/tt_icon_light"
+		"time"			"9999"
+		"priority"		"1000"
+		"canbequeued"	"1"
+		"pulse"			"1"
+		"sound"			"1"
+	}
+	"tutorial7"
+	{
+		"msg"			"#ZMTutorial7"
+		"icon"			"zmr_effects/tt_icon_light"
+		"time"			"10"
+		"priority"		"1012"
+		"pulse"			"0"
+		"sound"			"1"
+	}
+	"tutorial8"
+	{
+		"msg"			"#ZMTutorial8"
+		"icon"			"zmr_effects/tt_icon_light"
+		"time"			"9999"
+		"priority"		"1011"
+		"canbequeued"	"1"
+		"pulse"			"1"
+		"sound"			"1"
+		
+		"param1"		"key@zm_cmd_delete"
+	}
+	"tutorial9"
+	{
+		"msg"			"#ZMTutorial9"
+		"icon"			"zmr_effects/tt_icon_light"
+		"time"			"8"
+		"priority"		"1013"
+		"pulse"			"0"
+		"sound"			"1"
+	}
+	"tutorial10"
+	{
+		"msg"			"#ZMTutorial10"
+		"icon"			"zmr_effects/tt_icon_light"
+		"time"			"4"
+		"priority"		"1014"
+		"pulse"			"1"
+		"sound"			"1"
+	}
+	"tutorial11"
+	{
+		"msg"			"#ZMTutorial11"
+		"icon"			"zmr_effects/tt_icon_light"
+		"time"			"7"
+		"priority"		"1013"
+		"canbequeued"	"1"
+		"pulse"			"0"
+		"sound"			"1"
+	}
+	"tutorial12"
+	{
+		"msg"			"#ZMTutorial12"
+		"icon"			"zmr_effects/tt_icon_light"
+		"time"			"9999"
+		"priority"		"1012"
+		"canbequeued"	"1"
+		"pulse"			"1"
+		"sound"			"1"
+		
+		"param1"		"key@+use"
+	}
+	"tutorial13"
+	{
+		"msg"			"#ZMTutorial13"
+		"icon"			"zmr_effects/tt_icon_light"
+		"time"			"6"
+		"priority"		"1013"
+		"pulse"			"0"
+		"sound"			"1"
+	}
+	"zmmenu_exp"
+	{
+		"msg"			"#ZMMenuZMExp"
+		"time"			"10"
+		"team"			"3"
+	}
+	"zmmenu_nv"
+	{
+		"msg"			"#ZMMenuZMNV"
+		"time"			"10"
+		"team"			"3"
+		
+		"param1"		"key@zm_vision"
+	}
+	"zmmenu_attack"
+	{
+		"msg"			"#ZMMenuZMAttack"
+		"time"			"10"
+		"team"			"3"
+	}
+	"zmmenu_defend"
+	{
+		"msg"			"#ZMMenuZMDefend"
+		"time"			"10"
+		"team"			"3"
+	}
+	"zmmenu_selectall"
+	{
+		"msg"			"#ZMMenuZMSelAll"
+		"time"			"10"
+		"team"			"3"
+		
+		"param1"		"key@zm_cmd_selectall"
+	}
+	"zmmenu_ambush"
+	{
+		"msg"			"#ZMMenuZMAmbush"
+		"time"			"10"
+		"team"			"3"
+	}
+	"zmmenu_creategroup"
+	{
+		"msg"			"#ZMMenuZMGroupCre"
+		"time"			"10"
+		"team"			"3"
+		
+		"param1"		"key@+zm_cmd_ctrl"
+	}
+	"zmmenu_selectgroup"
+	{
+		"msg"			"#ZMMenuZMGroupSel"
+		"time"			"10"
+		"team"			"3"
+	}
+	"zmmenu_createhidden"
+	{
+		"msg"			"#ZMMenuZMSummon"
+		"time"			"10"
+		"team"			"3"
+		
+		"param1"		"key@zm_hiddenspawn"
+	}
+	"zmmenu_delete"
+	{
+		"msg"			"#ZMMenuZMDelete"
+		"time"			"10"
+		"team"			"3"
+		
+		"param1"		"key@zm_cmd_delete"
+	}
+	"zmmenu_bansheeceil"
+	{
+		"msg"			"#ZMMenuZMBansheeCeil"
+		"time"			"10"
+		"team"			"3"
+	}
+	"zmdesc_shambler"
+	{
+		"msg"			"#ZMDescShambler"
+		"time"			"10"
+		"team"			"3"
+	}
+	"zmdesc_banshee"
+	{
+		"msg"			"#ZMDescBanshee"
+		"time"			"10"
+		"team"			"3"
+	}
+	"zmdesc_hulk"
+	{
+		"msg"			"#ZMDescHulk"
+		"time"			"10"
+		"team"			"3"
+	}
+	"zmdesc_drifter"
+	{
+		"msg"			"#ZMDescDrifter"
+		"time"			"10"
+		"team"			"3"
+	}
+	"zmdesc_immolator"
+	{
+		"msg"			"#ZMDescImmolator"
+		"time"			"10"
+		"team"			"3"
+	}
+	"zmclearqueue"
+	{
+		"msg"			"#ZMClearQueueAll"
+		"time"			"10"
+		"team"			"3"
+	}
+	"zmsetrallypoint"
+	{
+		"msg"			"#ZMSetRallyPoint"
+		"time"			"10"
+		"team"			"3"
+	}
+}

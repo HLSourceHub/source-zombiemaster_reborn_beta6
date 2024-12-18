@@ -1,0 +1,76 @@
+WeaponData
+{
+	"printname"				"Rifle"
+	
+	"viewmodel"				"models/weapons/c_rifle_zm.mdl"
+	"worldmodel"			"models/weapons/w_rifle.mdl"
+	
+	"player_anims"			"rifle"
+	
+	
+	"PrimaryAttack"
+	{
+		// FRAMES fire 0-27, lever 28-97
+		"firerate"			"0.35"
+		"damage"			"50"
+		"range"				"2000"
+		
+		// 6 degrees
+		"spread"			"6 6 0"
+		
+		"viewpunch_min"		"-10 -2 0"
+		"viewpunch_max"		"-6 2 0"
+	}
+	
+	//"pumptime"			"-1"
+	
+	"crosshair"				"Rifle"
+	
+	"accuracy_increase"		"6.7"
+	"accuracy_decrease"		"2.1"
+	
+	"penetration_max"		"2"	
+	
+	
+	"primary_ammo"			"357"
+	
+	
+	"clip_size"				"11"
+	"default_clip"			"0"
+	
+	
+	"bucket"				"3"
+	"bucket_position"		"0"
+	"importance"			"4"
+	
+	
+	"reloadonladder"		"0"
+	
+
+	SoundData
+	{
+
+		"empty"				"Weapon_Rifle_ZM.Empty"
+		//"special1"			"Weapon_Rifle_ZM.Special1"
+		"single_shot"		"Weapon_Rifle_ZM.Single"
+	}
+
+	TextureData
+	{
+		"weapon"
+		{
+			"font"			"WeaponIcons"
+			"character"		"f"
+		}
+		"weapon_s"
+		{	
+			"font"			"WeaponIconsSelected"
+			"character"		"f"
+		}
+		"ammo"
+		{
+			"font"			"WeaponIcons"
+			"character"		"u"
+		}
+	}
+}

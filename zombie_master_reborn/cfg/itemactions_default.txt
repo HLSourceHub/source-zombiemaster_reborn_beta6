@@ -1,0 +1,73 @@
+
+"ItemActions"
+{
+	"Replace"
+	{
+		//
+		// Fix certain maps using "weapon_crowbar" instead of "weapon_zm_improvised"
+		//
+		"Stock_FixCrowbar"
+		{
+			"filter_class"		"weapon_crowbar"
+			
+			"replace"		"weapon_zm_improvised"
+		}
+		
+		//
+		// Fix certain maps using "weapon_shotgun" instead of "weapon_zm_shotgun"
+		//
+		"Stock_FixShotgun"
+		{
+			"filter_class"		"weapon_shotgun"
+			
+			"replace"		"weapon_zm_shotgun"
+		}
+		
+		//
+		// Spawn other shotgun types in old maps.
+		// normal shotgun and overunder
+		//
+		"Stock_SpawnOtherShotgunTypes"
+		{
+			"onlyoldmaps"		"1"
+			
+			"filter_class"		"weapon_zm_shotgun"
+			
+			"replace"		"Shotgun"
+		}
+		
+		//
+		// Spawn other rifle types in old maps.
+		// r700 and winchester
+		//
+		"Stock_SpawnOtherRifleTypes"
+		{
+			"onlyoldmaps"		"1"
+			
+			"filter_class"		"weapon_zm_rifle"
+			
+			"replace"		"Rifle"
+		}
+
+		//
+		// Spawn some fireaxes among sledgehammers in old maps.
+		//
+		"Stock_SpawnOtherRifleTypes"
+		{
+			"onlyoldmaps"		"1"
+
+			"replace_frac"			"0.5"
+			
+			"filter_class"		"weapon_zm_sledge"
+			
+			"replace"		"weapon_zm_fireaxe"
+		}
+		
+		//"Stock_SpawnOtherPistolTypes"
+		//{
+		//	"filter_class"		"weapon_zm_pistol"
+		//	
+		//	"replace"		"Pistol"
+		//}
+	}
+}

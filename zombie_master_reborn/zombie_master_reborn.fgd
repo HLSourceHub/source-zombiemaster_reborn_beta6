@@ -1,0 +1,340 @@
+ //-------------------------------------------------------------------------
+//
+// Game data for Zombie Master
+//
+//-------------------------------------------------------------------------
+
+@include "fgd/zmr_base_game.fgd" // base.fgd
+@include "fgd/zmr_base_mod.fgd" // hl2.fgd
+@include "fgd/zmr_items.fgd"
+@include "fgd/zmr_npcs.fgd"
+@include "fgd/zmr_spawns.fgd"
+
+
+//-------------------------------------------------------------------------
+//
+// Base Classes
+//
+//-------------------------------------------------------------------------
+@BaseClass = Activeable
+[
+	Active(choices) : "Active" : 1 =
+	[
+		0: "No"
+		1: "Yes"
+	]
+]
+
+@BaseClass = RemoveOnTrigger
+[
+	RemoveOnTrigger(choices) : "Activate Once" : 1 =
+	[
+		0: "No"
+		1: "Yes"
+	]
+]
+
+@BaseClass = InputActiveable
+[
+	input Toggle(void) : "Toggles intial active state"
+	input Hide(void) : "Hides"
+	input Unhide(void) : "Unhides"
+]
+
+
+
+//-------------------------------------------------------------------------
+//
+// Point Entities.
+//
+//-------------------------------------------------------------------------
+@PointClass base(Targetname, Parentname, Origin, Angles) = func_win :
+	"Target for the Humans to win or lose the game"
+[
+	input Win(void) : "Human Win"
+	input Lose(void) : "Zombie Master Win!"
+	
+	output OnWin(void) : "When humans win."
+	output OnLose(void) : "When humans lose. Either failing objectives or every human dying."
+	output OnSubmit(void) : "When Zombie Master submits."
+]
+
+@PointClass base(Targetname, Parentname, Origin, Angles) = func_giveresources :
+	"Give or take resources from the ZM's stash"
+[
+	spawnflags(flags) =
+	[
+		1: "Limit To Max" : 0
+	]
+	
+	input GiveResources(integer) : "Give/Take x resources"
+]
+
+@PointClass base(Targetname, Parentname, Origin, Angles, Activeable, InputActiveable, RemoveOnTrigger) = info_manipulate :
+	"Manipulatable object by the Zombie Master"
+[
+	Cost(integer) : "Cost" : 10 : "The amount of resources deducted upon activation"
+	Description(string) : "Description" : "" : "Description of this Manipulate's functions."
+	TrapCost(integer) : "TrapCost" : 0 : "Override the trap cost."
+
+	input SetDescription(string) : "Sets the description."
+	input SetTrapCost(integer) : "Sets the trap cost override."
+	input SetCost(integer) : "Sets the cost."
+	
+	output OnPressed(void) : "Fired when the button is pressed."
+]
+
+@PointClass base(Targetname, Parentname, Origin, Angles, Activeable, InputActiveable)  = info_zombiespawn :
+	"Where Zombies come out of"
+[
+	spawnflags(flags) =
+	[
+		1: "Spawn Shamblers" : 1
+		2: "Spawn Banshees" : 1
+		4: "Spawn Hulks" : 1
+		8: "Spawn Drifters" : 1
+		16: "Spawn Immolators" : 1
+	]
+	
+	
+	zombieflags(integer) : "Zombieflags" : 0 : "DEPRECATED. Use flags instead. Zombies that can be spawned here.  Refer to documentation."
+
+	rallyname(target_destination) : "Rallyname" : "" : "Targetname of the rallypoint this aims at."
+	nodename(target_destination) : "Spawn Node/Volume" : "" : "Targetname of the first spawn node, if any, in the chain of spawn nodes. This may also be a spawn volume trigger."
+	
+	modelgroup(string) : "Model Group" : "" : "Leave empty to use default model group (DefaultModels if not overriden). See scripts/zombiemodelgroups.txt"
+	
+	shamblercost(float) : "Shambler Cost" : "-1" : "Overrides the resource cost needed to spawn a shambler at this point. Leave at -1 to use the default value, which is normally 10."
+	bansheecost(float) : "Banshee Cost" : "-1" : "Overrides the resource cost needed to spawn a banshee at this point. Leave at -1 to use the default value, which is normally 60."
+	hulkcost(float) : "Hulk Cost" : "-1" : "Overrides the resource cost needed to spawn a hulk at this point. Leave at -1 to use the default value, which is normally 70."
+	driftercost(float) : "Drifter Cost" : "-1" : "Overrides the resource cost needed to spawn a drifter at this point. Leave at -1 to use the default value, which is normally 35."
+	immolatorcost(float) : "Immolator Cost" : "-1" : "Overrides the resource cost needed to spawn an immolator at this point. Leave at -1 to use the default value, which is normally 100."
+	
+	input SetZombieFlags(integer) : "Manually sets the zombies that can be spawned here."
+	input AddZombieFlags(integer) : "Manually adds to the zombies that can be spawned here."
+	input RemoveZombieFlags(integer) : "Manually removes from the zombies that can be spawned here."
+	
+	input EnableShamblerSpawn(void) : "Allows shamblers to spawn here if they were not allowed to before."
+	input EnableBansheeSpawn(void) : "Allows banshees to spawn here if they were not allowed to before."
+	input EnableHulkSpawn(void) : "Allows hulks to spawn here if they were not allowed to before."
+	input EnableDrifterSpawn(void) : "Allows drifters to spawn here if they were not allowed to before."
+	input EnableImmolatorSpawn(void) : "Allows immolators to spawn here if they were not allowed to before."
+	
+	input DisableShamblerSpawn(void) : "Stops shamblers from spawning here if they were allowed to before."
+	input DisableBansheeSpawn(void) : "Stops banshees from spawning here if they were allowed to before."
+	input DisableHulkSpawn(void) : "Stops hulks from spawning here if they were allowed to before."
+	input DisableDrifterSpawn(void) : "Stops drifters from spawning here if they were allowed to before."
+	input DisableImmolatorSpawn(void) : "Stops immolators from spawning here if they were allowed to before."
+	
+	input SetShamblerCost(integer) : "Overrides the cost of this zombie type. -1 reverts to default."
+	input SetBansheeCost(integer) : "Overrides the cost of this zombie type. -1 reverts to default."
+	input SetHulkCost(integer) : "Overrides the cost of this zombie type. -1 reverts to default."
+	input SetDrifterCost(integer) : "Overrides the cost of this zombie type. -1 reverts to default."
+	input SetImmolatorCost(integer) : "Overrides the cost of this zombie type. -1 reverts to default."
+	
+	output OnSpawnNPC(ehandle) : "Fired when a zombie is spawned here. The activator is the zombie, and the parameter is a pointer to the zombie."
+	output OnSpawnShambler(ehandle) : "Fired when a shambler is spawned here. The activator is the shambler, and the parameter is a pointer to the shambler."
+	output OnSpawnBanshee(ehandle) : "Fired when a banshee is spawned here. The activator is the banshee, and the parameter is a pointer to the banshee."
+	output OnSpawnHulk(ehandle) : "Fired when a hulk is spawned here. The activator is the hulk, and the parameter is a pointer to the hulk."
+	output OnSpawnDrifter(ehandle) : "Fired when a drifter is spawned here. The activator is the drifter, and the parameter is a pointer to the drifter."
+	output OnSpawnImmolator(ehandle) : "Fired when a immolator is spawned here. The activator is the immolator, and the parameter is a pointer to the immolator."
+]
+
+
+@PointClass base(Targetname, Parentname, Origin, Angles) = info_spawnnode :
+	"Specific spawn point for Zombie Spawn"
+[
+	nodename(target_destination) : "Next Node" : "" : "Next node in the chain, if any."
+	
+	output OnSpawnNPC(ehandle) : "Fired when a zombie is spawned at this node. The activator is the zombie, and the parameter is a pointer to the zombie."
+]
+
+@PointClass base(Targetname, Parentname, Origin, Angles) = info_rallypoint :
+	"Rally point for Zombie Spawns"
+[
+]
+
+@BaseClass color(0 0 200) base(Targetname, Angles, Shadow) = Item
+[
+	output OnPlayerTouch(void) : "Fires when the player touches this object"
+]
+
+@PointClass base(Targetname) size(-8 -8 -8, 8 8 8) = game_score_team : 
+	"An entity that awards/deducts points to a specified team." 
+[
+	spawnflags(flags) =
+	[
+		1: "Allow Negative" : 0
+	]
+
+	points(integer) : "Points to add (+/-)" : 1
+	
+	// Inputs
+	input ApplyScoreSurvivors(void) : "Add score to human survivors."
+	input ApplyScoreZM(void) : "Add score to ZM."
+]
+
+@PointClass base(Targetname) size(-8 -8 -8, 8 8 8) = info_objectives : 
+	"Show objectives on the screen." 
+[
+	Recipient(choices) : "Display To" : 0 =
+	[
+		0: "Humans"
+		1: "Zombie Master"
+		2: "Activator"
+		3: "All"
+	]
+	
+	input Reset(void) : "Resets all objectives."
+	input Display(void) : "Displays text for all players."
+	input DisplayActivator(void) : "Displays text to activator."
+	
+	input SetMainText(string) : "Set main objective text."
+	input SetChild1Text(string) : "Set child 1 objective text."
+	input SetChild2Text(string) : "Set child 2 objective text."
+	input SetChild3Text(string) : "Set child 3 objective text."
+	input SetChild4Text(string) : "Set child 4 objective text."
+	
+	
+	// DEPRECATED. NO NEED TO USE THESE.
+	// The objectives are automatically updated.
+	//input Update(void) : "Update number/complete status to all players."
+	//input UpdateMainText(string) : "Update main objective status to all players. If non-empty, also set text."
+	//input UpdateChild1Text(string) : "Update child 1 objective status to all players. If non-empty, also set text."
+	//input UpdateChild2Text(string) : "Update child 2 objective status to all players. If non-empty, also set text."
+	//input UpdateChild3Text(string) : "Update child 3 objective status to all players. If non-empty, also set text."
+	//input UpdateChild4Text(string) : "Update child 4 objective status to all players. If non-empty, also set text."
+	
+	input SetMainTextArg(string) : "Set main text argument."
+	input SetChild1TextArg(string) : "Set child 1 text argument."
+	input SetChild2TextArg(string) : "Set child 2 text argument."
+	input SetChild3TextArg(string) : "Set child 3 text argument."
+	input SetChild4TextArg(string) : "Set child 4 text argument."
+	
+	input IncMainTextArg(float) : "Increase main text argument."
+	input IncChild1TextArg(float) : "Increase child 1 text argument."
+	input IncChild2TextArg(float) : "Increase child 2 text argument."
+	input IncChild3TextArg(float) : "Increase child 3 text argument."
+	input IncChild4TextArg(float) : "Increase child 4 text argument."
+	
+	input InValueMainArg(float) : "Set main text argument value."
+	input InValueChild1Arg(float) : "Set child 1 text argument value."
+	input InValueChild2Arg(float) : "Set child 2 text argument value."
+	input InValueChild3Arg(float) : "Set child 3 text argument value."
+	input InValueChild4Arg(float) : "Set child 4 text argument value."
+	
+	input CompleteMain(void) : "Sets main as completed. Use Update to display this to players."
+	input CompleteChild1(void) : "Sets child 1 as completed. Use Update to display this to players."
+	input CompleteChild2(void) : "Sets child 2 as completed. Use Update to display this to players."
+	input CompleteChild3(void) : "Sets child 3 as completed. Use Update to display this to players."
+	input CompleteChild4(void) : "Sets child 4 as completed. Use Update to display this to players."
+	
+	input InCompleteMain(void) : "Sets main as incompleted. Use Update to display this to players."
+	input InCompleteChild1(void) : "Sets child 1 as incompleted. Use Update to display this to players."
+	input InCompleteChild2(void) : "Sets child 2 as incompleted. Use Update to display this to players."
+	input InCompleteChild3(void) : "Sets child 3 as incompleted. Use Update to display this to players."
+	input InCompleteChild4(void) : "Sets child 4 as incompleted. Use Update to display this to players."
+	
+	input ResetMain(void) : "Resets main objective. (text, completion, etc.)"
+	input ResetChild1(void) : "Resets child 1 objective. (text, completion, etc.)"
+	input ResetChild2(void) : "Resets child 2 objective. (text, completion, etc.)"
+	input ResetChild3(void) : "Resets child 3 objective. (text, completion, etc.)"
+	input ResetChild4(void) : "Resets child 4 objective. (text, completion, etc.)"
+]
+
+
+
+//-------------------------------------------------------------------------
+//
+// Brush Entities.
+//
+//-------------------------------------------------------------------------
+@SolidClass base(Trigger, Targetname, Activeable, InputActiveable) = trigger_playercount :
+	"A trigger volume that counts players."
+[
+	// Outputs
+	output OnCount(void) : "Fired whenever this trigger counts equal or greater than the percentage."
+
+	percentagetofire(integer) : "PercentageToFire" : 100 : "The number of players required to activate"
+]
+
+@SolidClass base(Trigger, Targetname, InputActiveable, Activeable) = trigger_entitycount :
+	"A trigger volume that counts entities."
+[
+	// Inputs
+	input Count(void) : "Checks the entities"
+
+	// Outputs
+	output OnCount(void) : "Fired whenever this trigger counts equal or greater than the count."
+	output OnNotCount(void) : "Fired whenever this trigger counts less than the count."
+
+	counttofire(integer) : "CountToFire" : 100 : "The number of ents required to activate"
+	triggerflags(integer) : "Triggerflags" : 1 : "What does this count? 1 = players, 2 = NPCs, 3 = props"
+]
+
+@SolidClass base(Targetname, Origin, Activeable, InputActiveable) = trigger_blockspotcreate :
+	"A trigger volume that stops hidden summons."
+[
+]
+
+@SolidClass base(Targetname, Origin, Activeable, InputActiveable) = trigger_zombiespawnvolume :
+	"A trigger volume that zombies spawn in."
+[
+	output OnSpawnNPC(ehandle) : "Fired when a zombie is spawned in this volume. The activator is the zombie, and the parameter is a pointer to the zombie."
+]
+
+@SolidClass base(Targetname, Origin, Activeable, InputActiveable) = trigger_blockphysexplosion :
+	"A trigger volume that stops physics explosions."
+[
+]
+
+
+@PointClass base(Targetname, Parentname, Origin, Angles) = info_loadout :
+	"Give a default loadout to the players.  Don't place more than one."
+[
+	Method(choices) : "Distribution method" : 1 =
+	[
+		1: "One of each weapon type"
+		2: "One random weapon"
+	]
+	
+	Pistols(integer) : "Pistols" : 0 : "Max pistols to hand out"
+	Shotguns(integer) : "Shotguns" : 0 : "Max shotguns to hand out"
+	Rifles(integer) : "Rifles" : 0 : "Max rifles to hand out"
+	Mac10s(integer) : "Mac10s" : 0 : "Max Mac10s to hand out"
+	Molotovs(integer) : "Molotovs" : 0 : "Max Molotovs to hand out"
+	Sledges(integer) : "Sledges" : 0 : "Max Sledges to hand out"
+	Improvised(integer) : "Improvised" : 0 : "Max Improvised weapons to hand out"
+	Revolvers(integer) : "Revolvers" : 0 : "Max Revolvers to hand out"
+]
+
+@FilterClass base(BaseFilter) iconsprite("editor/filter_name.vmt") = filter_activator_team :
+	"A filter that filters by the name of the activator."
+[
+	filterteam(choices) : "Filter Team Number" : 2 : "The team number to filter by.  If the filter mode is Allow, only entities whose "+
+		"team number matches the given team will pass the filter. If the filter mode is Disallow, "+
+		"all entities EXCEPT those whose team number matches the given team will pass the filter." =
+	[
+		2: "Survivor"
+		3: "Zombie Master"
+	]
+]
+
+@SolidClass base(Trigger, Targetname) = trigger_givepoints :
+	"A trigger volume that gives points to players."
+[
+	// Inputs
+	input Award(integer) : "Give the specified number of points to players inside the area"
+]
+
+@PointClass base(BaseFogController) iconsprite("editor/fog_controller.vmt") color(255 255 255) = env_fog_controller_zm : 
+	"An entity that controls the fog and view distance in the map."
+[
+]
+
+@SolidClass = func_ladder : 
+	"Ladder. Players will be able to freely along this brush, as if it was a ladder. If you are using a model prop " +
+	"for the visual representation of the ladder in the map, apply the toolsinvisibleladder material to the " +
+	"func_ladder brush."
+[
+]

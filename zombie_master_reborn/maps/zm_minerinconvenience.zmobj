@@ -1,0 +1,72 @@
+"Objectives"
+{
+	"@RoundStart" // Do this at the start of the round.
+	{
+		"SetMainText"			"GET TO THE GRAVEYARD"
+		
+		"SetChild1Text"			"BREAK THE GENERATORS"
+		"SetChild2Text"			"FIND A LADDER"
+		"SetChild3Text"			"BRING THE LADDER TO THE GRAVEYARD WALL"
+		
+		"Display"				""
+	}
+	"generator_break_counter,OnHitMax,0,-1"
+	{
+		"CompleteChild1"		"1"
+	}
+	"ladder_text_trigger_gen,OnStartTouch,0,-1"
+	{
+		"CompleteChild2"		""
+	}
+	"ladder_relay,OnTrigger,0,-1"
+	{
+		"CompleteMain"			""
+		"CompleteChild3"		""
+	}
+	"ladder_relay,OnTrigger,1,-1"
+	{
+		"Reset"					""
+		"SetMainText"			"GET INSIDE THE CRYPT"
+		"SetChild1Text"			"CONNECT DETONATORS: %i/4"
+		"SetChild1TextArg"		"0"
+		"SetChild2Text"			"FIRE IN THE HOLE!"
+	}
+	"plug_1_teleport,OnStartTouch,0,-1"
+	{
+		"IncChild1TextArg"		"1"
+	}
+	"plug_2_teleport,OnStartTouch,0,-1"
+	{
+		"IncChild1TextArg"		"1"
+	}
+	"plug_3_teleport,OnStartTouch,0,-1"
+	{
+		"IncChild1TextArg"		"1"
+	}
+	"plug_4_teleport,OnStartTouch,0,-1"
+	{
+		"IncChild1TextArg"		"1"
+	}
+	"plug_counter,OnHitMax,0,-1"
+	{
+		"CompleteChild1"		""
+	}
+	"crypt_door_1_relay,OnTrigger,0,-1"
+	{
+		"CompleteChild2"		""
+	}
+	"crypt_text_trigger,OnStartTouch,0,-1"
+	{
+		"CompleteMain"			""
+	}
+	"crypt_text_trigger,OnStartTouch,1,-1"
+	{
+		"Reset"					""
+		"SetMainText"			"LOWER THE EXPLOSIVES"
+		"SetChild1Text"			"STAND BY THE MOTOR TO LOWER."
+	}
+	"barrel_train_bottom,OnPass,0,-1"
+	{
+		"CompleteMain"			""
+	}
+}

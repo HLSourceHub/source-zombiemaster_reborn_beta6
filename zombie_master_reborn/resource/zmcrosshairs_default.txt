@@ -1,0 +1,124 @@
+// This is the default crosshair file. DO NOT EDIT THIS.
+// Create a file called zmcrosshairs.txt instead.
+// Editing the crosshair in-game automatically creates that file.
+//
+// name					- Name in menu
+// type					- material/dynamiccrosshair/dotonly/none
+// dot					- Size of dot in pixels
+// outline				- Outline size in pixels (usually only works with the dot.)
+// color				- What do you think?
+// displayinmenu		- What do you think?
+// offsetfromcenter		- 	How much empty space there is in the center. (dynamic crosshair)
+//							or how big the crosshair is (material)
+//
+// Crosshair specific:
+// width				- Width of cross (left->right, Y) (dynamic crosshair)
+// length				- Length of cross (left->right, X) (dynamic crosshair)
+// dynamicmove			- How many pixels dynamic crosshair is allowed to move
+"Crosshairs"
+{
+	"Shotgun"
+	{
+		"name"	"Shotgun"
+		"type"	"material"
+		"material0"	"zmr_crosshairs/hollow_4"
+		"dot"	"0"
+		"outline"	"0"
+		"color"	"255 255 255 255"
+		"outlinecolor"	"0 0 0 255"
+		"offsetfromcenter"	"52"
+	}
+	"ShotgunSporting"
+	{
+		"name"	"Over-under"
+		"type"	"material"
+		"material0"	"zmr_crosshairs/hollow_4_small"
+		"dot"	"0"
+		"outline"	"0"
+		"color"	"255 255 255 255"
+		"outlinecolor"	"0 0 0 255"
+		"offsetfromcenter"	"37"
+	}
+	"Mac10"
+	{
+		"name"	"Mac-10"
+		"type"	"material"
+		"material0"	"zmr_crosshairs/hollow_2"
+		"dot"	"2"
+		"outline"	"0"
+		"color"	"255 255 255 255"
+		"outlinecolor"	"0 0 0 255"
+		"offsetfromcenter"	"32"
+	}
+	"Rifle"
+	{
+		"name"	"Rifle"
+		"type"	"dynamiccrosshair"
+		"dot"	"3"
+		"outline"	"1"
+		"offsetfromcenter"	"10"
+		"width"		"2"
+		"length"	"15"
+		"dynamicmove"	"20"
+		"color"	"255 255 255 255"
+		"outlinecolor"	"0 0 0 255"
+	}
+	"Revolver"
+	{
+		"name"	"Revolver"
+		"type"	"dynamiccrosshair"
+		"dot"	"3"
+		"outline"	"1"
+		"offsetfromcenter"	"10"
+		"width"		"2"
+		"length"	"15"
+		"dynamicmove"	"30"
+		"color"	"255 255 255 255"
+		"outlinecolor"	"0 0 0 255"
+	}
+	"Pistol"
+	{
+		"name"	"Pistol"
+		"type"	"dotonly"
+		"dot"	"3"
+		"outline"	"1"
+		"color"	"255 255 255 255"
+		"outlinecolor"	"0 0 0 255"
+	}
+	"Melee"
+	{
+		"name"	"Melee"
+		"type"	"dotonly"
+		"dot"	"0"
+		"outline"	"0"
+		"color"	"255 255 255 255"
+		"outlinecolor"	"0 0 0 255"
+	}
+	"Hands"
+	{
+		"name"	"Hands"
+		"type"	"dotonly"
+		"dot"	"0"
+		"outline"	"0"
+		"color"	"255 255 255 255"
+		"outlinecolor"	"0 0 0 255"
+	}
+	"Throwable"
+	{
+		"name"	"Throwable"
+		"type"	"dotonly"
+		"dot"	"0"
+		"outline"	"0"
+		"color"	"255 255 255 255"
+		"outlinecolor"	"0 0 0 255"
+	}
+	"ZM"
+	{
+		"name"	"ZM"
+		"type"	"dotonly"
+		"dot"	"3"
+		"outline"	"1"
+		"color"	"255 255 255 255"
+		"outlinecolor"	"0 0 0 255"
+	}
+}

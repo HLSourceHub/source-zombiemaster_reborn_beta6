@@ -1,0 +1,74 @@
+WeaponData
+{
+	"printname"				"R700 Sniper"
+	
+	"viewmodel"				"models/weapons/c_r700_zm.mdl"
+	"worldmodel"			"models/weapons/w_huntingrifle.mdl"
+	
+	"player_anims"			"sniper"
+	
+	
+	"PrimaryAttack"
+	{
+		"firerate"			"0.75"
+		"damage"			"200"
+		"range"				"3000"
+		
+		// 30 degrees
+		"spread"			"30 30 0"
+		
+		"viewpunch_min"		"-10 -2 0"
+		"viewpunch_max"		"-6 2 0"
+	}
+	
+	//"pumptime"			"-1"
+	
+	"crosshair"				"Rifle"
+	
+	"accuracy_increase"		"1.9"
+	"accuracy_decrease"		"7.1"
+	
+	"penetration_max"		"4"	
+	
+	
+	"primary_ammo"			"357"
+	
+	
+	"clip_size"				"5"
+	"default_clip"			"0"
+	
+	
+	"bucket"				"3"
+	"bucket_position"		"0"
+	"importance"			"4"
+	
+	
+	"reloadonladder"		"0"
+	
+
+	SoundData
+	{
+
+		"empty"				"Weapon_R700_ZM.Empty"
+		"single_shot"		"Weapon_R700_ZM.Single"
+	}
+
+	TextureData
+	{
+		"weapon"
+		{
+			"font"			"WeaponIcons"
+			"character"		"%"
+		}
+		"weapon_s"
+		{	
+			"font"			"WeaponIconsSelected"
+			"character"		"%"
+		}
+		"ammo"
+		{
+			"font"			"WeaponIcons"
+			"character"		"w"
+		}
+	}
+}

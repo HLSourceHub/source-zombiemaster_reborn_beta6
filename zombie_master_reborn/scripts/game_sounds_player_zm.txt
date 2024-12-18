@@ -1,0 +1,67 @@
+"ZMPlayer.PickupWeapon"
+{
+	"channel"		"CHAN_ITEM"
+	"volume"		"0.8"
+	"soundlevel"		"SNDLVL_75dB"
+	"pitch"		"95,105"
+	
+	"rndwave"
+	{
+		"wave"		"items/weapon_pickup-1.wav"
+		"wave"		"items/weapon_pickup-2.wav"
+	}
+}
+
+"ZMPlayer.PickupAmmo"
+{
+	"channel"		"CHAN_ITEM"
+	"volume"		"0.8"
+	"soundlevel"		"SNDLVL_75dB"
+	"pitch"		"95,105"
+	
+	"rndwave"
+	{
+		"wave"		"items/ammo_pickup-1.wav"
+		"wave"		"items/ammo_pickup-2.wav"
+	}
+}
+
+"ZMPlayer.FlashLightOn"
+{
+	"channel"	"CHAN_WEAPON"
+	"volume"	"0.8"
+	"soundlevel"    "SNDLVL_75dB"
+	"pitch"	"PITCH_NORM"
+
+	"wave" "items/survivor_flashlight_on.wav"
+}
+
+"ZMPlayer.FlashLightOff"
+{
+	"channel"	"CHAN_WEAPON"
+	"volume"	"0.8"
+	"soundlevel"  "SNDLVL_75dB"
+	"pitch"	"PITCH_NORM"
+
+	"wave" "items/survivor_flashlight_off.wav"
+}
+
+"ZMPlayer.ZMVisionOn"
+{
+	"channel"	"CHAN_WEAPON"
+	"volume"	"0.2"
+	"soundlevel"  "SNDLVL_75dB"
+	"pitch"		"95,105"
+
+	"wave" "items/zm_flashlight_on.wav"
+}
+
+"ZMPlayer.ZMVisionOff"
+{
+	"channel"	"CHAN_WEAPON"
+	"volume"	"0.2"
+	"soundlevel"  "SNDLVL_75dB"
+	"pitch"		"95,105"
+
+	"wave" "items/zm_flashlight_off.wav"
+}

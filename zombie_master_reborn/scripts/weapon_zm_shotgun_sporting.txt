@@ -1,0 +1,84 @@
+WeaponData
+{
+	"printname"				"Over-under"
+	
+	"viewmodel"				"models/weapons/c_sporting.mdl"
+	"worldmodel"			"models/weapons/w_sporting.mdl"
+	
+	"player_anims"			"sporting"
+	
+	
+	"PrimaryAttack"
+	{
+		"firerate"			"0.45"
+		"damage"			"12"
+		"range"				"500"
+		"bulletspershot"	"7"
+		
+		// 6 degrees
+		"spread"			"8 8 0"
+		
+		"viewpunch_min"		"-8 -4 0"
+		"viewpunch_max"		"-6 4 0"
+	}
+	
+	"SecondaryAttack"
+	{
+		"firerate"			"0.45"
+		"damage"			"12"
+		"range"				"300"
+		"bulletspershot"	"7"
+		
+		// 15 degrees
+		"spread"			"20 20 0"
+		
+		"viewpunch_min"		"-16 -4 0"
+		"viewpunch_max"		"-8 4 0"
+	}
+	
+	
+	"crosshair"				"ShotgunSporting"
+	
+	"penetration_max"		"1"
+	
+	"primary_ammo"			"Buckshot"
+	
+	
+	"clip_size"				"2"
+	"default_clip"			"0"
+	
+	
+	"bucket"				"3"
+	"bucket_position"		"0"
+	"importance"			"4"
+	
+	
+	"reloadonladder"		"0"
+	
+	
+	SoundData
+	{
+		"empty"				"Weapon_Shotgun_ZM.Empty"
+		"single_shot"		"Weapon_OverUnder_ZM.Single"
+		"double_shot"		"Weapon_OverUnder_ZM.Double"
+	}
+
+	TextureData
+	{
+		"weapon"
+		{
+			"font"			"WeaponIcons"
+			"character"		"!"
+		}
+		"weapon_s"
+		{	
+			"font"			"WeaponIconsSelected"
+			"character"		"!"
+		}
+		"ammo"
+		{
+			"font"			"WeaponIcons"
+			"character"		"s"
+		}
+	}
+}

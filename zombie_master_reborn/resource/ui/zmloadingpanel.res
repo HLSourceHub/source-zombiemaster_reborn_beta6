@@ -1,0 +1,58 @@
+"resource/ui/zmmainmenu.res"
+{
+	"ZMLoadingPanel"
+	{
+		"ControlName"		"CZMMainMenu"
+		"fieldName"		"ZMMainMenu"
+		"xpos"		"0"
+		"ypos"		"0"
+		"wide"		"640"
+		"tall"		"480"
+		"visible"		"1"
+		"enabled"		"1"
+	}
+	"MapNameLabel"
+	{
+		"ControlName"		"Label"
+		"fieldName"		"MapNameLabel"
+		"xpos"		"20"
+		"ypos"		"400"
+		"wide"		"500"
+		"tall"		"40"
+		"visible"		"1"
+		"enabled"		"1"
+		"labelText"		""
+		"textAlignment"		"west"
+		"font"		"ZMLoadingScreenMain"
+		"wrap"		"0"
+		"allcaps"		"1"
+	}
+	"TipLabel"
+	{
+		"ControlName"		"Label"
+		"fieldName"		"TipLabel"
+		"xpos"		"20"
+		"ypos"		"20"
+		"wide"		"580"
+		"tall"		"60"
+		"visible"		"1"
+		"enabled"		"1"
+		"labelText"		""
+		"textAlignment"		"north-west"
+		"font"		"ZMLoadingScreenNormal"
+		"wrap"		"1"
+	}
+	"TextMessage"
+	{
+		"ControlName"		"CZMLoadingScreenText"
+		"fieldName"		"TextMessage"
+		"xpos"		"20"
+		"ypos"		"100"
+		"wide"		"500"
+		"tall"		"220"
+		"visible"		"0"
+		"enabled"		"1"
+		"unicode"		"1"
+		"editable"		"0"
+	}
+}

@@ -1,0 +1,106 @@
+// -----------------------
+// 
+// Items.
+//
+// -----------------------
+@include "zmr_base_game.fgd"
+
+
+@BaseClass color(0 0 200) base(Targetname, Angles, Shadow) = Item
+[
+	output OnPlayerTouch(void) : "Fires when the player touches this object"
+]
+
+@BaseClass color(0 0 200) base(Targetname, Angles) = Weapon
+[
+	spawnflags(Flags) =
+	[
+		1 : "Start constrained" : 0
+		2 : "Is Template (used by item_item_crate)" : 0
+	]
+	
+	
+	//
+	// These are commented out as you should no longer use them.
+	//
+	//v_modeloverride(studio) : "Override View Model" : "" : "View model the weapon will use. If left empty, use default."
+	//w_modeloverride(studio) : "Override World Model" : "" : "World model the weapon will use. If left empty, use default."
+	//dmgoverride(integer) : "Override Damage" : -1 : "Amount of damage weapon will inflict. Use numbers less than zero to use default."
+	//clip1override(integer) : "Override Clip" : -1 : "How big the weapon clip/magazine is. Use numbers less than zero to use default."
+	
+	customscriptfile(string) : "Custom script file" : "" : "The custom script file name."
+
+	output OnPlayerUse(void) : "Fires when the player +uses this weapon"
+	output OnPlayerPickup(void) : "Fires when the player picks up this weapon"
+	output OnNPCPickup(void) : "Fires when an NPC picks up this weapon"
+]
+
+
+// -----------------------
+//
+// Ammo.
+//
+// -----------------------
+@PointClass base(Item) studio("models/items/boxsrounds.mdl")= item_ammo_pistol : "Box of Pistol ammo" []
+@PointClass base(Item) studio("models/items/boxsrounds.mdl")= item_ammo_pistol_large : "Large Box of Pistol ammo" []
+@PointClass base(Item) studio("models/items/357ammo.mdl")= item_ammo_357 : "Box of 357 ammo" []
+@PointClass base(Item) studio("models/items/357ammobox.mdl")= item_ammo_357_large : "Large Box of 357 ammo" []
+@PointClass base(Item) studio("models/items/boxbuckshot.mdl")= item_box_buckshot : "Box Buckshot" []
+@PointClass base(Item) studio("models/items/revolverammo.mdl")= item_ammo_revolver : "Box of Revolver ammo" []
+@PointClass base(Item) studio("models/items/boxmrounds.mdl")= item_ammo_smg1 : "Box of SMG1 ammo" []
+@PointClass base(Item) studio("models/items/boxmrounds.mdl")= item_ammo_smg1_large : "Large Box of SMG1 ammo" []
+
+
+
+@PointClass base(BasePropPhysics, Targetname, Angles, DamageFilter, BaseFadeProp) studio("models/items/crates/crate_wepin.mdl") = item_item_crate : "Item Crate"
+[
+	//CrateType(choices) : "Crate Contains" : 0 =
+	//[
+	//	0 : "Contains specified item"
+	//]
+
+
+	//CrateAppearance(choices) : "Crate Appearance" : 0 =
+	//[
+	//	0 : "Default Appearance"
+	//	1 : "Radar Beacon Crate"
+	//]
+
+	ItemClass(pointentityclass) : "Item Type" : "weapon_zm_pistol" : "Class name of the entity to spawn when the crate is broken"
+	ItemCount(integer) : "Item Count" : 1 : "Number of items to emit upon breakage"
+	//SpecificResupply(target_destination) : "Specific resupply" : "" : "If item type is item_dynamic_resupply, specify a specific one to use instead of the master"
+
+	ItemTemplate(target_destination) : "Weapon Template To Use" : "" : "Template weapon that this maker should be creating clones of."
+	
+	// Inputs
+	input Kill(void) : "Remove the item crate"
+	input Break(void) : "Breaks the breakable."
+	input SetHealth(integer) : "Sets a new value for health. If the breakable's health reaches zero it will break."
+	input AddHealth(integer) : "Adds health to the breakable. If the breakable's health reaches zero it will break."
+	input RemoveHealth(integer) : "Removes health from the breakable. If the breakable's health reaches zero it will break."
+	
+	// Outputs
+	output OnBreak(void) : "Fires when broken."
+	output OnHealthChanged(float) : "Fires when the health of this breakable changes, passing the new value of health as a percentage of max health, from [0..1]."
+
+	//output OnCacheInteraction(void) : "This output fires when the player proves they have 'found' this crate. Fires on: Picked up by +USE, Picked up by Physcannon, Punted by Physcannon, Broken."
+]
+
+
+// -----------------------
+//
+// Weapons.
+//
+// -----------------------
+@PointClass base(Weapon) studio("models/weapons/w_shotty.mdl") = weapon_zm_shotgun : "Shotgun" []
+@PointClass base(Weapon) studio("models/weapons/w_rifle.mdl") = weapon_zm_rifle : "Rifle" []
+@PointClass base(Weapon) studio("models/weapons/smg_zm_3rd.mdl") = weapon_zm_mac10 : "Mac 10" []
+@PointClass base(Weapon) studio("models/weapons/w_357.mdl") = weapon_zm_revolver : "Revolver" []
+@PointClass base(Weapon) studio("models/weapons/w_pistol_zm.mdl") = weapon_zm_pistol : "Pistol" []
+//@PointClass base(Weapon) studio("models/weapons/flashlight3rd_zm.mdl") = weapon_zm_flashlight : "Flashlight" []
+@PointClass base(Weapon) studio("models/weapons/w_crowbar.mdl") = weapon_zm_improvised : "Improvised Weapon" []
+@PointClass base(Weapon) studio("models/weapons/w_sledham.mdl") = weapon_zm_sledge : "Sledgehammer" []
+@PointClass base(Weapon) studio("models/weapons/molotov3rd_zm.mdl") = weapon_zm_molotov : "Molotov Cocktail" []
+@PointClass base(Weapon) studio("models/weapons/w_sporting.mdl") = weapon_zm_shotgun_sporting : "OverUnder Shotgun" []
+@PointClass base(Weapon) studio("models/weapons/w_huntingrifle.mdl") = weapon_zm_r700 : "R700 Sniper" []
+@PointClass base(Weapon) studio("models/weapons/w_faxe.mdl") = weapon_zm_fireaxe : "Fire Axe" []

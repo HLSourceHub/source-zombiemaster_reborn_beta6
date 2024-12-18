@@ -1,0 +1,6 @@
+VertexLitGeneric
+{
+	$basetexture	models\zombie_classic\eyeball_l
+	//"$iris" "models/Zombie_Classic/pupil_l"
+	//"$halflambert" 1
+}

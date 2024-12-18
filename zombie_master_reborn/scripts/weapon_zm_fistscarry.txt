@@ -1,0 +1,49 @@
+WeaponData
+{
+	"printname"				"Hands"
+
+	"viewmodel"				"models/weapons/c_fists_zm.mdl"
+	"worldmodel"			"models/weapons/w_null.mdl"
+	
+	"player_anims"			"fists"
+	
+	
+	"PrimaryAttack"
+	{
+		"firerate"			"0.65"
+		"damage"			"5"
+		"range"				"45"
+		
+		"viewpunch_min"		"-1 -1 0"
+		"viewpunch_max"		"1 1 0"
+	}
+	
+	
+	"crosshair"				"Hands"
+	
+	"bucket"				"0"
+	"bucket_position"		"0"
+	"importance"			"1"
+
+	"clip_size"				"-1"
+
+	
+	SoundData
+	{
+		"single_shot"			"Weapon_Fists_ZM.Swing"
+	}
+	
+	TextureData
+	{
+		"weapon"
+		{
+			"font"			"WeaponIcons"
+			"character"		"c"
+		}
+		"weapon_s"
+		{	
+			"font"			"WeaponIconsSelected"
+			"character"		"c"
+		}
+	}
+}

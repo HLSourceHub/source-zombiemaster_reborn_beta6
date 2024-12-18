@@ -1,0 +1,54 @@
+WeaponData
+{
+	"printname"				"Molotov"
+
+	"viewmodel"				"models/weapons/c_molotov_zm.mdl"
+	"worldmodel"			"models/weapons/molotov3rd_zm.mdl"
+	
+	"player_anims"			"molotov"
+	
+	
+	"PrimaryAttack"
+	{
+	}
+	
+	"throw_velocity"		"1200"
+
+	"angvel_min"			"0 0 -500"
+	"angvel_max"			"0 0 -100"
+
+	
+	"crosshair"				"Throwable"
+	
+	"primary_ammo"			"Molotov"
+	
+	"bucket"				"4"
+	"bucket_position"		"0"
+	// We should never switch to a molotov when running out of ammo.
+	// Even fists are more useful in a pinch.
+	"importance"			"0"
+	
+
+	"clip_size"				"-1"
+	"default_clip"			"1"
+	
+	
+	"reloadonladder"		"0"
+	"attackonladder"		"0"
+	"attackinwater"			"0"
+	
+	
+	TextureData
+	{
+		"weapon"
+		{
+			"font"		"WeaponIcons"
+			"character"	"k"
+		}
+		"weapon_s"
+		{	
+			"font"		"WeaponIconsSelected"
+			"character"	"k"
+		}
+	}
+}

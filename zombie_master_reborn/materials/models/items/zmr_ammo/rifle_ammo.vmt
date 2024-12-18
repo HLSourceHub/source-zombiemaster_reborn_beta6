@@ -1,0 +1,5 @@
+VertexLitGeneric
+{
+	$baseTexture	"Models/Items/zmr_ammo/rifleammo_copyrite"
+	$model			1
+}

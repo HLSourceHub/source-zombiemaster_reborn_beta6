@@ -1,0 +1,70 @@
+WeaponData
+{
+	"printname"				"Shotgun"
+	
+	"viewmodel"				"models/weapons/c_shotgun_new.mdl"
+	"worldmodel"			"models/weapons/w_shotty.mdl"
+	
+	"player_anims"			"shotgun"
+	
+	
+	"PrimaryAttack"
+	{
+		"firerate"			"0.35"
+		"damage"			"6"
+		"range"				"500"
+		"bulletspershot"	"7"
+		
+		// 15 degrees | 4.5 degrees
+		"spread"			"15 4.5 0"
+		
+		"viewpunch_min"		"-9 -3.5 0"
+		"viewpunch_max"		"-5 3.5 0"
+	}
+	
+	"pumptime"				"0.65"
+	
+	"crosshair"				"Shotgun"
+	
+	"primary_ammo"			"Buckshot"
+	
+	
+	"clip_size"				"8"
+	"default_clip"			"0"
+	
+	
+	"bucket"				"3"
+	"bucket_position"		"0"
+	"importance"			"4"
+	
+	
+	"reloadonladder"		"0"
+	
+	
+	SoundData
+	{
+		"empty"				"Weapon_Shotgun_ZM.Empty"
+		"reload"			"Weapon_Shotgun_ZM.Reload"
+		"special1"			"Weapon_Shotgun_ZM.Special1"
+		"single_shot"		"Weapon_Shotgun_ZM.Single"
+	}
+
+	TextureData
+	{
+		"weapon"
+		{
+			"font"			"WeaponIcons"
+			"character"		"b"
+		}
+		"weapon_s"
+		{	
+			"font"			"WeaponIconsSelected"
+			"character"		"b"
+		}
+		"ammo"
+		{
+			"font"			"WeaponIcons"
+			"character"		"s"
+		}
+	}
+}
